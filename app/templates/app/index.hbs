@@ -1,0 +1,12 @@
+<h1>CARS</h1>
+
+<select onChange={{action this.onChange value="target.value"}}>
+  <option disabled >Escoge un coche</option>
+  {{#each this.model.cars as |car|}}
+    <option value={{car.id}}>{{car.brand}}</option>
+  {{/each}}
+</select>
+
+{{#if this.car}}
+  <CarInfo @car={{this.car}} @handleSubmit={{this.onSubmit}} />
+{{/if}}

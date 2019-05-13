@@ -1,0 +1,32 @@
+<h1>Información del coche</h1>
+<form action>
+	<input type="text"
+		placeholder={{@car.brand}}
+		value={{this.brand}}
+		oninput={{ action "handleBrand" value="target.value" }}
+	>
+  <input type="text"
+		placeholder={{@car.color}}
+		value={{this.color}}
+		oninput={{ action "handleColor" value="target.value" }}
+	>
+  <input type="text"
+		placeholder={{@car.wheels}}
+		value={{this.wheels}}
+		oninput={{ action "handleWheel" value="target.value" }}
+	>
+  <input type="text"
+		placeholder={{@car.price}}
+		value={{this.price}}
+		oninput={{ action "handlePrice" value="target.value" }}
+	>
+	{{#if this.text}}
+		<button
+			{{ action this.handleSubmit @car.id}}
+		>
+			SUBMIT
+		</button>
+	{{/if}}
+
+</form>
+<p></p>
